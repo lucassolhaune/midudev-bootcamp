@@ -1,30 +1,27 @@
-import { Fragment } from 'react';
-import './App.css';
-import Mensaje from './Mensaje';
-
-const Description = () =>{
-  return(
-    <p>Esta es la APP del curso del bootcamp </p>
-  );
-}
-
 const App = () => {
-  return(
-    
-    /*Esto es un Fragment. Sirve para envolver lo que 
-    querramos renderizar en React sin necesidad de crear un elemento en el HTML*/      
-    <>
-      {/*componente con llave que seria "COLOR" y valor que seria "message"*/}
-      <Mensaje color ="red" message ="Estamos trabajando"/>
-      {/*componente con llave que seria "COLOR" y valor que seria "message"*/}
-      <Mensaje color ="green" message ="en un curso"/>
-      {/*componente con "llave" que seria "COLOR" y "valor" que seria "message"*/}
-      <Mensaje color ="yellow" message ="de React"/> 
-      {/*Esto es un componente*/}
-      <Description /> 
-    </>
+  const course = 'Half Stack application development'
+  const part1 = 'Fundamentals of React'
+  const exercises1 = 10
+  const part2 = 'Using props to pass data'
+  const exercises2 = 7
+  const part3 = 'State of a component'
+  const exercises3 = 14
 
-  );
+  return (
+    <div>
+      <h1>{course}</h1>
+      <p>
+        {part1} {exercises1}
+      </p>
+      <p>
+        {part2} {exercises2}
+      </p>
+      <p>
+        {part3} {exercises3}
+      </p>
+      <p>Number of exercises {exercises1 + exercises2 + exercises3}</p>
+    </div>
+  )
 }
 
-export default App;
+export default App
