@@ -2,20 +2,16 @@ import './App.css';
 import { useState } from 'react';
 
 const App = (props) => {
-  const contador = useState(0); //contador inicializado en cero
-
-  const valueContador = contador[0]; //valor del contador
-  const updateContador = contador[1];   //actualizacion del contador
+  const [contadorValue, updateContador] = useState(0); //contador inicializado en cero
 
   // Con este intervalo estamos diciendole que cada dos segundos 
   // actulice el contador que tenemos
-  setInterval(() =>{
-    updateContador(valueContador + 1);
-  }, 2000);
 
   return(
     <div>
-      {contador}
+    <h1>El valor del contador es: </h1>
+    <p> {contadorValue} </p>
+    <h2>Magia de react</h2>  
     </div>
   );
 }
