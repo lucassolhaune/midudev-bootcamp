@@ -1,7 +1,16 @@
-//Componente App. NUNCA crear componentes dentro de otro componente
+//NUNCA crear componentes dentro de otro componente
+
+/**
+ * Forma one line. Extraes la propiedad.
+ * const Title = (course) => <h1>{course}</h1>
+ */
+const Title = (props) => {
+  return <h1>{props.course}</h1>
+}
+
+//Componente App
 const App = () => {
   const course = 'Half Stack application development'
-  const title1 = 'Retomando bootcamp midudev'
   const part1 = 'Fundamentals of React'
   const exercises1 = 10
   const part2 = 'Using props to pass data'
@@ -12,8 +21,7 @@ const App = () => {
   //EJERCICIO DE PRUEBA
   return (
     <div>
-      <h1>{course}</h1>
-      <h2>{title1}</h2>
+      <Title course =  {course}/>
       <p>
         {part1} {exercises1}
       </p>
