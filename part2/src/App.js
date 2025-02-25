@@ -2,16 +2,44 @@ import './App.css';
 import { useState } from 'react';
 
 const App = (props) => {
-  const [contadorValue, updateContador] = useState(0); //contador inicializado en cero
+  const [contador, setContador] = useState(0); 
 
-  // Con este intervalo estamos diciendole que cada dos segundos 
-  // actulice el contador que tenemos
+  console.log("render");  
+
+  //Boton para incrementar el valor
+  const handleClick = () => {
+    setContador(contador + 1);
+  }
+  
+  const handleClickReset = () => {
+    setContador(0);
+  }
+
+  const decrementClick = () => {
+    setContador (contador - 1);
+  }
+
+  const isEven = contador % 2 === 0;
 
   return(
     <div>
-    <h1>El valor del contador es: </h1>
-    <p> {contadorValue} </p>
-    <h2>Magia de react</h2>  
+      <p>El valor del contador es: </p>
+      <h1> {contador} </h1>
+      <p>{isEven ? "Es par" : "Es impar"}</p>
+      <button 
+        onClick = {handleClick} >
+        Increment
+      </button>
+
+      <button 
+        onClick = {handleClickReset} >
+        Reset
+      </button>
+
+      <button 
+        onClick = {decrementClick} >
+        Decrement
+      </button>
     </div>
   );
 }
